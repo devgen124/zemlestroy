@@ -1,0 +1,6 @@
+include ../mixins/basic/icon
+
+mixin top-card(text, iconName, iconWidth, iconHeight)
+  li.top-card
+    +icon(iconName, iconWidth, iconHeight)
+    = text

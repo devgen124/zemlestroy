@@ -1,0 +1,46 @@
+.button {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  position: relative;
+  padding: 17px 40px;
+  color: $color-white;
+  font-family: $font-family--alt;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 500;
+  background-image: $gradient-green;
+  border-radius: 100px;
+  border: none;
+
+  @include outline-reset;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: inherit;
+    box-shadow: $box-shadow-green;
+    transition: box-shadow $button-transition-settings;
+  }
+
+  svg {
+    margin-left: 10px;
+    transition: transform $button-transition-settings;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::after {
+      box-shadow: $box-shadow-green-hover;
+    }
+
+    svg {
+      transform: translateX(15px);
+    }
+  }
+}

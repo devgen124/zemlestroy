@@ -1,35 +1,38 @@
 mixin header(headerMod, currentPage)
   -
-    var headerLinks = [
-      {
-        href: "#",
-        text: "Страница 1"
-      },
-      {
-        href: "#",
-        text: "Страница 2"
-      },
-      {
-        href: "#",
-        text: "Страница 3"
-      },
+    const headerLinks = [
+      {href: "#", text: "Главная"},
+      {href: "#", text: "Портфолио"},
+      {href: "#", text: "Видеоотзывы"},
     ]
 
   header(class=(headerMod) ? "header header--" + headerMod : "header")
-    .header__wrapper
-      if(currentPage === "main")
-        a.header__logo Логотип
-      else
-        a.header__logo(href="main.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link, index in headerLinks
-              if(index === currentPage)
+    .container
+      .header__inner
+        .header__main
+          .header__logo
+            a(href="#")
+              +icon('logo', 42, 47)
+              .header__logo-text
+                b Землестрой
+                span Сервис
+
+          p.header__desc Устройство рулонных газонов «под ключ»
+
+        nav.main-nav
+          button.main-nav__toggle.btn-reset.burger(type="button" aria-label="Переключатель отображения меню" aria-pressed="false")
+          .main-nav__wrapper.js-mobile-menu
+            ul.main-nav__list
+              each link, index in headerLinks
                 li
-                  a.main-nav__link.main-nav__link--active=link.text
-              else
-                li
-                  a.main-nav__link(href=link.href)=link.text
+                  a.main-nav__link(
+                    class={'main-nav__link--active': currentPage === link.text},
+                    href=link.href)
+                      =link.text
+
+            .main-nav__contacts
+              a(href="tel:+79827051347").main-nav__tel
+                +icon('phone', 16, 16)
+                | +7 (982) 705-13-47
+
+

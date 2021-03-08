@@ -1,0 +1,27 @@
+include button
+include top-card
+
+mixin promo
+  .section.promo
+    .container
+      .promo__main
+        h1 Рулонный и посевной газоны «под ключ»
+        p.promo__desc-major
+          | С полным оборудованием территории
+          span *
+        p.promo__desc-minor
+          span *
+          |  – Установим: автополив, дренажные системы и освещение
+        +button('Узнать подробнее', 'promo__button')
+
+      ul.promo__cards
+        -
+          const cards = [
+            {text: 'Гарантируем приживаемость', icon: {width: 42, height: 32}},
+            {text: 'Анализ и подготовка почвы', icon: {width: 50, height: 50}},
+            {text: 'Эксперты в своем деле', icon: {width: 43, height: 43}},
+            {text: 'С профильным образованием', icon: {width: 43, height: 43}},
+            ]
+
+        each card, index in cards
+          +top-card(card.text, `promo-${index + 1}`, card.icon.width, card.icon.height)

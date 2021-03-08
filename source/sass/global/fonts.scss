@@ -1,6 +1,7 @@
 $fonts: (
   ("GothamPro", "GothamPro", 400, normal),
   ("GothamPro", "GothamPro-Medium", 500, normal),
+  ("Geometria", "Geometria-Medium", 500, normal),
 );
 
 @mixin font-face($family, $file-name, $weight, $style) {

@@ -1,0 +1,88 @@
+.promo {
+  padding: 127px 0 90px;
+  background-image: url("../img/bg/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 1920px auto;
+
+  @include viewport--sm {
+    padding-top: 0;
+    background-image: url("../img/bg/bg-mobile.jpg");
+    background-position: 100% 0;
+    background-size: auto;
+  }
+
+  &__main {
+    margin-bottom: 143px;
+    width: 50%;
+
+    h1 {
+      margin: 0 0 40px;
+      font-size: 48px;
+      line-height: 1.25;
+      font-weight: 500;
+    }
+
+    span {
+      color: $color-green;
+    }
+
+    @include viewport--md {
+      width: 70%;
+
+      h1 {
+        margin-bottom: 35px;
+        font-size: 40px;
+      }
+    }
+
+    @include viewport--sm {
+      margin-bottom: 0;
+      padding: 157px 0 330px;
+      width: auto;
+
+      h1 {
+        margin-bottom: 8px;
+        font-size: 26px;
+        line-height: 36px;
+      }
+    }
+  }
+
+  &__desc {
+    &-major {
+      margin: 0 0 25px;
+      font: 22px/1.2 $font-family;
+
+      @include viewport--sm {
+        margin-bottom: 14px;
+        padding-right: 50px;
+        font: 18px/30px $font-family;
+      }
+    }
+
+    &-minor {
+      margin: 0 0 45px;
+      font: 14px/1.2 $font-family;
+
+      @include viewport--sm {
+        margin-bottom: 33px;
+        padding-right: 50px;
+        font: 12px/20px $font-family;
+      }
+    }
+  }
+
+  &__cards {
+    @include list-reset;
+    margin-right: -20px;
+    margin-bottom: -20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}

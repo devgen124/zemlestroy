@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const CircularDependencyPlugin = require('circular-dependency-plugin')
 const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
@@ -36,5 +37,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new DuplicatePackageCheckerPlugin(),
     new CircularDependencyPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
   ],
 };
