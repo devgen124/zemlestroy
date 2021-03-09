@@ -1,0 +1,43 @@
+.grades-block {
+  &__inner {
+    h2 {
+      margin: 0 0 12px;
+
+      @include viewport--sm {
+        margin-bottom: 8px;
+      }
+    }
+
+    > p {
+      margin: 0 0 50px;
+      max-width: 45%;
+      font-size: 16px;
+      line-height: 30px;
+
+      @include viewport--md {
+        margin-bottom: 20px;
+        max-width: none;
+      }
+    }
+  }
+
+  &__list {
+    @include list-reset;
+    margin-right: -20px;
+    margin-bottom: -20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &--top {
+    background-image: url("../img/bg/bg-top-grades.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 1920px auto;
+  }
+}

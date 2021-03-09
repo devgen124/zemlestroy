@@ -1,13 +1,13 @@
 .promo {
   padding: 127px 0 90px;
-  background-image: url("../img/bg/bg.jpg");
+  background-image: url("../img/bg/bg-promo.jpg");
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: 1920px auto;
 
   @include viewport--sm {
     padding-top: 0;
-    background-image: url("../img/bg/bg-mobile.jpg");
+    background-image: url("../img/bg/bg-promo-mobile.jpg");
     background-position: 100% 0;
     background-size: auto;
   }

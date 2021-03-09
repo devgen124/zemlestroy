@@ -1,0 +1,20 @@
+include ../mixins/basic/img
+include ../mixins/basic/icon
+
+mixin grades-card(data, index)
+  -
+    const imgTitle = index % 2 ? 'grade2' : 'grade1';
+
+  li.grades-card
+    +img('content', imgTitle, 'jpg', 550, 250, data.title)
+    .grades-card__content
+      h3.title.title--h3= data.title
+      button.grades-card__toggle(aria-label="Показать полное описание")
+        +icon('acc-down', 11, 7)
+      .grades-card__wrapper
+        p.grades-card__top-desc= data.topDesc
+        ul
+          each item in data.descList
+            li.arrow-list-item= item
+        p.grades-card__bottom-desc= data.bottomDesc
+

@@ -1,0 +1,12 @@
+include grades-card
+
+mixin top-grades-block()
+  section.grades-block.grades-block--top
+    .container
+      .grades-block__inner
+        h2.title Используем только элитные сорта газона
+        p Сорта газона премиум класса с многолетним ростом. Подбираем тип газона индивидуально под ваш тип участка
+        ul.grades-block__list
+          each item, index in topGradeList
+            +grades-card(item, index)
+

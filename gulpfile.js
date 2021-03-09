@@ -1,7 +1,9 @@
 const gulp = require('gulp');
+const data = require('gulp-data');
 const plumber = require('gulp-plumber');
 const sourcemap = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const server = require('browser-sync').create();
@@ -15,10 +17,12 @@ const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 const pug = require('gulp-pug');
 const cached = require('gulp-cached');
+const fs = require('fs');
 
 const pugToHtml = () => {
   return gulp.src('source/pug/pages/*.pug')
       .pipe(plumber())
+      .pipe(data(() => JSON.parse(fs.readFileSync('./source/data.json'))))
       .pipe(pug({ pretty: true }))
       .pipe(cached('pug'))
       .pipe(gulp.dest('build'));
@@ -28,6 +32,7 @@ const css = () => {
   return gulp.src('source/sass/style.scss')
       .pipe(plumber())
       .pipe(sourcemap.init())
+      .pipe(sassGlob())
       .pipe(sass())
       .pipe(postcss([autoprefixer({
         grid: true,
@@ -77,6 +82,7 @@ const syncserver = () => {
   });
 
   gulp.watch('source/pug/**/*.pug', gulp.series(pugToHtml, refresh));
+  gulp.watch('source/data.json', gulp.series(pugToHtml, refresh));
   gulp.watch('source/sass/**/*.{scss,sass}', gulp.series(css));
   gulp.watch('source/js/**/*.{js,json}', gulp.series(js, refresh));
   gulp.watch('source/data/**/*.{js,json}', gulp.series(copy, refresh));

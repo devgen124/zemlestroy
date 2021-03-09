@@ -17,14 +17,7 @@
 // Blocks
 //---------------------------------
 
-@import "blocks/header";
-@import "blocks/burger";
-@import "blocks/footer";
-@import "blocks/modal";
-@import "blocks/promo";
-@import "blocks/button";
-@import "blocks/top-card";
-
+@import "blocks/**/*.scss";
 
 // используйте это для отключения ховеров на тач устройствах
 // ! но не используйте это для текстовых полей ( input, textarea )
