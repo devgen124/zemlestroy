@@ -1,6 +1,11 @@
 extends ../base/layout
-include ../blocks/promo
-include ../blocks/grades-block
+include ../mixins/blocks/promo
+include ../mixins/blocks/grades-block
+include ../mixins/blocks/consult
+include ../mixins/blocks/minor-features
+include ../mixins/blocks/major-sequence
+include ../mixins/blocks/works
+include ../mixins/blocks/consult-middle
 
 block data
   include ../data/placeholder
@@ -18,6 +23,14 @@ block main
   main
     +promo
     +top-grades-block
+    +consult
+    .bg-mask
+      +minor-features
+      +top-major-sequence
+    +works
+    .middle-bg
+      +consult-middle
+
 
 
 

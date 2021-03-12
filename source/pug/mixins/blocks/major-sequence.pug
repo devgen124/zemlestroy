@@ -1,0 +1,13 @@
+mixin major-sequence
+  section.majoe-sequence
+include major-sequence-card
+
+mixin top-major-sequence
+  section.major-sequence
+    .container
+      .major-sequence__inner
+        h2.title Ваш газон станет действительно многолетним
+        p Как мы достигаем качества роста и прижимаемости газона
+        ul.major-sequence__list
+          each item in majorSequenceTopList
+            +major-sequence-card(item)

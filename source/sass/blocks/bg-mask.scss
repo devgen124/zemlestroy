@@ -1,0 +1,16 @@
+.bg-mask {
+  margin-top: -90px;
+  padding-top: 90px;
+  background-image: url("../img/bg/bg-mask.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: 1920px auto;
+
+  @include viewport--sm {
+    margin-top: -83px;
+    padding-top: 83px;
+    background-image: url("../img/bg/bg-mask-top-mobile.png");
+    background-position: 52% 0;
+    background-size: auto;
+  }
+}

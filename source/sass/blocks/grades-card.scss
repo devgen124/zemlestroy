@@ -36,7 +36,7 @@
   }
 
   h3 {
-    margin: 0;
+    margin: 0 0 15px;
 
     @include viewport--sm {
       padding-right: 65px;
@@ -51,30 +51,7 @@
       position: absolute;
       top: 24px;
       right: 20px;
-      width: 50px;
-      height: 50px;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      border: 1px solid $color-light-grey3;
-      background-color: $color-light-grey4;
-
-      @include outline-reset;
-
-      svg {
-        fill: $color-white;
-        stroke: $color-green;
-        transition: transform $default-transition-settings,
-          stroke $default-transition-settings;
-      }
-
-      &--close {
-        svg {
-          stroke: $color-grey2;
-          transform: rotate(-180deg);
-        }
-      }
     }
   }
 
@@ -85,7 +62,7 @@
   }
 
   &__top-desc {
-    margin-bottom: 11px;
+    margin: 0 0 11px;
   }
 
   ul {

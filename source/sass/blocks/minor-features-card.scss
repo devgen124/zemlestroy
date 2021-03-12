@@ -1,0 +1,40 @@
+.minor-features-card {
+  width: calc(33.3% - 70px);
+  display: flex;
+  flex-direction: column;
+
+  @include viewport--md {
+    width: calc(50% - 70px);
+  }
+
+  @include viewport--sm {
+    width: calc(100% - 70px);
+  }
+
+  &__icon {
+    margin-bottom: 21px;
+    width: 85px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-white;
+    border-radius: 10px;
+  }
+
+  h3 {
+    margin: 0 0 11px;
+    min-height: 64px;
+
+    @include viewport--sm {
+      min-height: 0;
+    }
+  }
+
+  p {
+    margin: 0;
+    flex: 1 0 auto;
+    font-size: 14px;
+    line-height: 26px;
+  }
+}

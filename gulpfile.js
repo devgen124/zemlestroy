@@ -33,7 +33,7 @@ const css = () => {
       .pipe(plumber())
       .pipe(sourcemap.init())
       .pipe(sassGlob())
-      .pipe(sass())
+      .pipe(sass({includePaths: ['./node_modules']}))
       .pipe(postcss([autoprefixer({
         grid: true,
       })]))

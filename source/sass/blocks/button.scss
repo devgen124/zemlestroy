@@ -15,6 +15,20 @@
 
   @include outline-reset;
 
+  &--minor {
+    @include viewport--sm {
+      padding: 17px;
+      width: auto;
+      justify-content: center;
+      font-size: 14px;
+      line-height: 17px;
+
+      svg {
+        display: none;
+      }
+    }
+  }
+
   &::after {
     content: "";
     position: absolute;

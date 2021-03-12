@@ -1,0 +1,10 @@
+include minor-features-card
+
+mixin minor-features
+  section.minor-features
+    .container
+      .minor-features__inner
+        h2.title Элитный газон лучше обычного рулонного газона
+        ul.minor-features__list
+          each item in minorFeaturesList
+            +minor-features-card(item)

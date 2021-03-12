@@ -1,0 +1,11 @@
+include ../basic/icon
+
+mixin button(text, addClass = null, minor = false)
+  if (!minor)
+    a(href='#' class= addClass ? addClass : '').button
+      =text
+      +icon('arrow-left', 14, 15)
+  else
+    a(href='#' class= addClass ? addClass : '').button.button--minor
+      =text
+      +icon('arrow-left', 14, 15)

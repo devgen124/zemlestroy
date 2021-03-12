@@ -1,0 +1,10 @@
+include works-slide
+
+mixin works
+  section.works
+    .container
+      .works__inner
+        h2.title Как может выглядеть ваш участок
+        .works__container.owl-carousel
+          each item in worksList
+            +works-slide(item)

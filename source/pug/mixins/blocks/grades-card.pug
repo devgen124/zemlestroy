@@ -1,5 +1,4 @@
-include ../mixins/basic/img
-include ../mixins/basic/icon
+include acc-button
 
 mixin grades-card(data, index)
   -
@@ -9,9 +8,8 @@ mixin grades-card(data, index)
     +img('content', imgTitle, 'jpg', 550, 250, data.title)
     .grades-card__content
       h3.title.title--h3= data.title
-      button.grades-card__toggle(aria-label="Показать полное описание")
-        +icon('acc-down', 11, 7)
-      .grades-card__wrapper
+      +acc-button('grades-card__toggle')
+      .grades-card__wrapper.acc-body
         p.grades-card__top-desc= data.topDesc
         ul
           each item in data.descList

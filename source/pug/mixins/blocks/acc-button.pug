@@ -1,0 +1,5 @@
+include ../basic/icon
+
+mixin acc-button(addClass)
+  button(class= addClass ? addClass : '' aria-label='Показать полное описание').acc-button
+    +icon('acc-down', 11, 7)

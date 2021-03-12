@@ -1,0 +1,49 @@
+.works-gallery {
+  @include viewport--md {
+    max-width: 50%;
+  }
+
+  @include viewport--sm {
+    max-width: 100%;
+  }
+
+  &__main {
+    margin-bottom: 10px;
+    width: 336px;
+    height: 230px;
+
+    img {
+      display: block;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    @include viewport--md {
+      display: none;
+    }
+  }
+
+  &__item {
+    width: 105px;
+    height: 75px;
+    display: flex;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    @include viewport--md {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__row {
+    > .owl-nav {
+      padding: 0 10px;
+    }
+  }
+}

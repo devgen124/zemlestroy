@@ -1,0 +1,45 @@
+.major-sequence-card {
+  @include list-item-reset;
+  padding: 32px 30px;
+  width: calc(33.3% - 20px);
+  display: flex;
+  flex-direction: column;
+  color: $color-black2;
+  background-color: $color-light-grey2;
+  background-image: url("../img/svg/arrow-long-right.svg");
+  background-repeat: no-repeat;
+  background-position: right 30px top 45px;
+  border: 1px solid $color-light-grey;
+  border-radius: 10px;
+
+  @include viewport--md {
+    width: calc(50% - 20px);
+  }
+
+  @include viewport--sm {
+    padding-right: 60px;
+    width: calc(100% - 20px);
+    flex-direction: row;
+    align-items: center;
+    background-image: url("../img/svg/arrow-long-bottom.svg");
+    background-position: right 30px top 50%;
+  }
+
+
+  &__icon {
+    margin-bottom: 15px;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+
+    @include viewport--sm {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}

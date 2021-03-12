@@ -1,0 +1,96 @@
+.consult-middle {
+  &__inner {
+    padding-top: 57px;
+    padding-bottom: 100px;
+    display: flex;
+
+    @include viewport--sm {
+      padding-top: 0;
+      padding-bottom: 50px;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__content {
+    padding-right: 25px;
+
+    h2 {
+      margin: 0 0 10px;
+    }
+
+    blockquote {
+      margin: 0 0 30px;
+      font: 14px/26px $font-family;
+    }
+
+    p {
+      margin: 0 0 11px;
+    }
+
+    cite {
+      display: block;
+      margin: 0 0 21px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    @include viewport--sm {
+      padding-right: 0;
+    }
+  }
+
+  &__image {
+    flex: 0 0 percentage(550px/1120px);
+    max-width: percentage(550px/1120px);
+    height: 419px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    @include viewport--sm {
+      margin-bottom: 19px;
+      flex: 0 0 100%;
+      max-width: 100%;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+      }
+    }
+  }
+
+  &__buttons-row {
+    display: flex;
+  }
+
+  &__main-btn {
+    @include viewport--sm {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__contact-btn {
+    margin-left: 20px;
+    width: 57px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $color-light-grey;
+    transition: background-color $default-transition-settings;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: darken($color-light-grey, 5%);
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.consult {
+  background-image: url("../img/bg/bg-consult.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 1920px auto;
+  color: $color-white;
+
+  @include viewport--sm {
+    background-image: url("../img/bg/bg-consult-mobile.jpg");
+    background-position: 50% 100%;
+    background-size: auto;
+  }
+
+  &__inner {
+    padding: 92px 0 95px;
+    position: relative;
+
+    h2 {
+      margin: 0 0 23px;
+      font-size: 36px;
+      line-height: 45px;
+      font-weight: 500;
+    }
+
+    @include viewport--sm {
+      padding: 38px 0 300px;
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: 26px;
+        line-height: 36px;
+      }
+    }
+  }
+
+  &__top-desc {
+    margin: 0 0 11px;
+    font-size: 22px;
+    line-height: 36px;
+
+    @include viewport--sm {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+
+  &__bottom-desc {
+    margin: 0 0 40px;
+    font-size: 14px;
+    line-height: 1.25;
+
+    @include viewport--sm {
+      margin-bottom: 37px;
+      font-size: 12px;
+    }
+  }
+}
