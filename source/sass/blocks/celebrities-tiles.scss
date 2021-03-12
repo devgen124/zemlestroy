@@ -1,0 +1,59 @@
+.celebrities-tiles {
+  position: relative;
+  z-index: 2;
+  padding: 0 50px 23px;
+
+  .owl-stage {
+    display: flex;
+  }
+
+  .owl-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include viewport--md {
+    display: none !important;
+  }
+
+  &__slide {
+    width: 100%;
+    flex: 1 1 auto;
+
+    a {
+      display: block;
+      height: 100%;
+      min-height: 180px;
+      padding: 22px 50% 22px 28px;
+      background-color: rgba($color-white, 0.3);
+      background-repeat: no-repeat;
+      background-position: 100% 100%;
+      background-size: 40% auto;
+      border: 1px solide rgba($color-white, 0.15);
+      backdrop-filter: blur(70px);
+      color: $color-white;
+      border-radius: 10px;
+      transition: background-color $default-transition-settings,
+        color $default-transition-settings;
+
+      @include outline-reset;
+
+      &:focus,
+      &:active {
+        background-color: $color-white;
+        color: $color-black2;
+      }
+    }
+
+    h4 {
+      margin: 0 0 5px;
+      font: 700 16px/26px $font-family;
+    }
+
+    p {
+      margin: 0;
+      font: 14px/20px $font-family;
+    }
+  }
+}

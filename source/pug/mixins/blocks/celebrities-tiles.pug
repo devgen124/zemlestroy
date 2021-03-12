@@ -1,0 +1,7 @@
+mixin celebrities-tiles
+  .celebrities-tiles.owl-carousel
+    each slide in celebrities
+      .celebrities-tiles__slide
+        a(href=`#${slide.hash}`, style={'background-image': `url("./img/content/${slide.image.title}.png")`})
+          h4= slide.title
+          p= slide.description

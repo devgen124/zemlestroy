@@ -1,0 +1,29 @@
+@keyframes fadeOn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOff {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOn {
+  animation-name: fadeOn;
+  animation-duration: 0.5s;
+}
+
+.fadeOff {
+  animation-name: fadeOn;
+  animation-duration: 0.5s;
+}

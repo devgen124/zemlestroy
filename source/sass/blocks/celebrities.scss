@@ -1,0 +1,39 @@
+.celebrities {
+  &__inner {
+    @include viewport--sm {
+      margin: 0 -20px;
+      // width: 100%;
+    }
+  }
+  &__slider {
+    background-image: url("../img/bg/celeb-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    border-radius: 10px;
+
+    @include viewport--sm {
+      border-radius: 0;
+    }
+  }
+
+  &__nav {
+    margin-top: -200px;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0 50px;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+
+    button {
+      margin-left: 10px;
+      pointer-events: initial;
+    }
+
+    @include viewport--sm {
+      margin-top: -115px;
+      padding: 0 20px;
+    }
+  }
+}

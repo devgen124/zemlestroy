@@ -1,0 +1,10 @@
+include ../basic/img
+
+mixin celebrities-slide(data)
+  .celebrities-slide(data-hash=data.hash)
+    .title.celebrities-slide__section-title Уровень наших клиентов подтверждает наш высокий подход к делу
+    h3.title.title--h3.celebrities-slide__title= data.title
+    p.celebrities-slide__first-text= data.firstText
+    p.celebrities-slide__second-text= data.secondText
+    .celebrities-slide__image
+      +img('content', data.image.title, 'png', data.image.width, data.image.height, data.title)

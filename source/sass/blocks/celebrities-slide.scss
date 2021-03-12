@@ -1,0 +1,74 @@
+.celebrities-slide {
+  padding: 61px 535px 165px 50px;
+  position: relative;
+  color: $color-white;
+
+  @include viewport--md {
+    padding-right: 50px;
+    padding-bottom: 0;
+  }
+
+  @include viewport--sm {
+    padding: 36px 18px 0;
+  }
+
+  &__section-title {
+    margin-bottom: 13px;
+    font-weight: 700;
+
+    @include viewport--sm {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 4px;
+
+    @include viewport--sm {
+      margin-bottom: 11px;
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+
+  &__first-text {
+    margin: 0 0 23px;
+    font: italic 16px/24px $font-family;
+
+    @include viewport--sm {
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__second-text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @include viewport--md {
+      position: static;
+      margin-left: -50px;
+
+      img {
+        width: 500px !important;
+        height: auto;
+      }
+    }
+
+    @include viewport--sm {
+      margin-left: 0;
+
+      img {
+        width: 250px !important;
+      }
+    }
+  }
+}
