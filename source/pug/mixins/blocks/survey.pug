@@ -1,0 +1,101 @@
+include section-header
+include button
+
+mixin survey
+  section.survey
+    .container
+      .survey__inner
+        +section-header('Рассчитайте примерную стоимость газона', 'Ответьте на 7 вопросов и получите предварительную стоимость еще до выезда замерщика')
+        .survey__form-wrapper
+          -
+            const variations = [
+              {
+                image:
+                {
+                  title: 'variant',
+                  width: 344,
+                  height: 170
+                },
+                title: 'Английски партерный газон',
+                value: 'var1'
+              },
+              {
+                image:
+                {
+                  title: 'variant',
+                  width: 344,
+                  height: 170
+                },
+                title: 'Классический элитный газон',
+                value: 'var2'
+              },
+              {
+                image:
+                {
+                  title: 'variant',
+                  width: 344,
+                  height: 170
+                },
+                title: 'Теневыносливый премиум газон',
+                value: 'var3'
+              },
+              {
+                image:
+                {
+                  title: 'variant',
+                  width: 344,
+                  height: 170
+                },
+                title: 'Спортивный премиум газон',
+                value: 'var4'
+              },
+              {
+                image:
+                {
+                  title: 'variant',
+                  width: 344,
+                  height: 170
+                },
+                title: 'Спортивный премиум газон',
+                value: 'var5'
+              },
+              {
+                image:
+                {
+                  title: 'variant',
+                  width: 344,
+                  height: 170
+                },
+                title: 'Спортивный премиум газон',
+                value: 'var6'
+              },
+            ];
+
+          form.survey__form
+            fieldset.survey__fieldset
+              h3.title.title--h3 Выберете сорт газона
+              .survey__radio-row
+                each item, index in variations
+                  label
+                    .survey__radio-img
+                      +img('content', item.image.title, 'jpg', item.image.width, item.image.height, 'Фото газона')
+                    input(type='radio', name='grass-type', value=item.value, checked= !index )
+                    .survey__radio-wrapper= item.title
+
+          .survey__footer
+            .survey__progress
+              -
+                const g = '';
+              .survey__progress-count
+                span.current-count 2
+                |  из&nbsp;
+                span.all-count 7
+                |  вопросов
+              .survey__progress-bar
+                - for (let i = 0; i < 7; i++)
+                  .survey__progress-item(class={'checked': i === 0, 'current': i === 1})
+
+            .survey__nav
+              +button('Назад', '', 'prev')
+              +button('Далее', '', 'next')
+

@@ -1,10 +1,22 @@
+include section-header
 include works-slide
+include button
 
-mixin works
+mixin top-works
   section.works
     .container
       .works__inner
-        h2.title Как может выглядеть ваш участок
+        +section-header('Как может выглядеть ваш участок')
         .works__container.owl-carousel
-          each item in worksList
+          each item in topWorksList
             +works-slide(item)
+
+mixin bottom-works
+  section.works.works--bottom
+    .container
+      .works__inner
+        +section-header('Наши успешные проекты')
+        .works__container.owl-carousel
+          each item in bottomWorksList
+            +works-slide(item)
+        +button('Все проекты', 'works__link')

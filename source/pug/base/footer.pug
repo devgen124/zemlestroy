@@ -1,2 +1,35 @@
 mixin footer(footerMod)
+  -
+    const headerLinks = [
+      {href: "#", text: "Главная"},
+      {href: "#", text: "Портфолио"},
+      {href: "#", text: "Видеоотзывы"},
+    ]
+
   footer(class= (footerMod) ? "footer footer--" + footerMod : "footer")
+    .container
+      .footer__inner
+        .footer__main
+          .footer__logo
+            a(href="#")
+              +icon('logo', 42, 47)
+              .footer__logo-text
+                b Землестрой
+                span Сервис
+
+          p.footer__desc Устройство рулонных газонов «под ключ»
+
+        nav.main-nav.main-nav--footer
+          .main-nav__wrapper
+            ul.main-nav__list
+              each link, index in headerLinks
+                li
+                  a.main-nav__link(
+                    class={'main-nav__link--active': currentPage === link.text},
+                    href=link.href)
+                      =link.text
+
+            .main-nav__contacts
+              a(href="tel:+79827051347").main-nav__tel
+                +icon('phone', 16, 16)
+                | +7 (982) 705-13-47

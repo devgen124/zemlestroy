@@ -1,0 +1,196 @@
+.survey {
+  &__inner {
+    padding-top: 102px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid $color-light-grey6;
+
+    @include viewport--sm {
+      padding-top: 66px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__form {
+    margin-bottom: 40px;
+  }
+
+  &__form-wrapper {
+    padding: 50px;
+    background-color: $color-white;
+    border: 1px solid $color-light-grey;
+    border-radius: 10px;
+
+    @include viewport--sm {
+      padding: 22px 20px;
+    }
+  }
+
+  &__fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    h3 {
+      margin: 0 0 30px;
+
+      @include viewport--sm {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__radio-row {
+    margin: 0 -20px -20px 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+      margin: 0 20px 20px 0;
+      display: block;
+      width: calc(33.3% - 20px);
+      cursor: pointer;
+
+      input {
+        display: none;
+
+        &:checked + .survey__radio-wrapper::before {
+          background-image: url("../img/svg/check.svg"), $gradient-green;
+          background-clip: initial, border-box;
+          background-repeat: no-repeat, no-repeat;
+          background-position: center;
+        }
+      }
+
+      @include viewport--md {
+        width: calc(50% - 20px);
+      }
+
+      @include viewport--sm {
+        width: calc(100% - 20px);
+      }
+    }
+  }
+
+  &__radio-img {
+    height: 170px;
+
+    @include viewport--sm {
+      height: 45.3vw;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  &__radio-wrapper {
+    margin-top: -20px;
+    padding: 14px 40px 14px 21px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    font: 16px/26px $font-family;
+    background-color: $color-grey-bg;
+    border: 1px solid $color-light-grey;
+    border-radius: 10px;
+
+    &::before {
+      content: "";
+      margin-top: 8px;
+      margin-right: 14px;
+      flex: 0 0 auto;
+      width: 30px;
+      height: 30px;
+      border: 1px solid transparent;
+      background: linear-gradient($color-white, $color-white) padding-box,
+        $gradient-green border-box;
+      border-radius: 8px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+  }
+
+  &__progress {
+    width: 60%;
+    display: flex;
+
+    @include viewport--sm {
+      display: none;
+    }
+  }
+
+  &__progress-count {
+    margin-right: 32px;
+    color: $color-grey;
+    font: 16px/32px $font-family;
+  }
+
+  &__progress-bar {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__progress-item {
+    position: relative;
+    flex: 1 1 auto;
+    height: 1px;
+    background-color: $color-light-grey6;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translateX(-50%) translateY(-50%);
+      width: 17px;
+      height: 17px;
+      background: $color-light-grey6;
+      border-radius: 50%;
+    }
+
+    &:last-child {
+      max-width: 0;
+    }
+
+    &.checked {
+      background-color: $color-green;
+
+      &::before {
+        background-image: url("../img/svg/check-minor.svg"), $gradient-green;
+        background-repeat: no-repeat, no-repeat;
+        background-position: center;
+      }
+    }
+
+    &.current {
+      &::before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-white;
+        background-image: url("../img/svg/gradient-circle.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 1px solid $color-light-grey6;
+      }
+    }
+  }
+
+  &__nav {
+    margin-left: auto;
+    display: flex;
+
+    @include viewport--sm {
+      flex: 1 0 auto;
+      margin-left: 0;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+include ../basic/img
+include ../basic/icon
+include button
+
+mixin exclusive
+  section.exclusive
+    .container
+      .exclusive__inner
+        .exclusive__img
+          +img('content', 'exclusive', 'jpg', 768, 424, 'Эксклюзивный проект')
+        .exclusive__content
+          h2 Сделаем эксклюзивный проект специально под вас
+          blockquote
+            p Наша ключевая экспертность - это земляные работы и устройство качественного травяного покрытия.
+            p С опытом строительных работ я понял, что лучше всего у меня и моей команды получается делать газонные покрытия. Поэтому решили сконцентрироваться на этом и за 7 лет работы отточили эти навыки до совершенства
+            p Я готов лично гарантировать качество.<br> С радостью поможем вам с вашим участков
+          cite С уважением, Максим Андреев
+          .exclusive__link-row
+            +button('Отвечу на любые вопросы', '', 'minor')
+            a(href="#", aria-label="Ссылка на Whatsapp").exclusive__contact-btn
+              +icon('whatsapp', 24, 24)
+
+
+
+
+

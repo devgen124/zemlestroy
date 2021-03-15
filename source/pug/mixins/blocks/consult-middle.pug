@@ -1,3 +1,4 @@
+include section-header
 include button
 include ../basic/icon
 include ../basic/img
@@ -7,7 +8,7 @@ mixin consult-middle
     .container
       .consult-middle__inner
         .consult-middle__content
-          h2.title Делаем «на совесть», <br>а не просто «под ключ»
+          +section-header('Делаем «на совесть», <br>а не просто «под ключ»')
           blockquote
             p За долгие годы работы в строительстве я понял, что моя ключевая компетенция - это земляные работы. И я решил отбросить все остальное, а сконцентрироваться на том, что получается хорошо – готовить почву и стелить газон.
             p Подготовка почвы - это самое важное для приживаемости газона. У всех участков разна кислотность почвы, что негативно сказывается на газоне в последствии.
@@ -15,7 +16,7 @@ mixin consult-middle
             p Давайте сделаем и ваш участок «на совесть», а не просто «под ключ»
           cite Директор «ЗемлеСтрой», Максим Андреев
           .consult-middle__buttons-row
-            +button('Получить консультацию', 'consult-middle__main-btn', minor = true)
+            +button('Получить консультацию', 'consult-middle__main-btn', 'minor')
             a(href="#", aria-label="Ссылка на Whatsapp").consult-middle__contact-btn
               +icon('whatsapp', 24, 24)
 

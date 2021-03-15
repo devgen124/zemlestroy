@@ -1,12 +1,21 @@
+include section-header
 include grades-card
 
-mixin top-grades-block()
+mixin top-grades-block
   section.grades-block.grades-block--top
     .container
       .grades-block__inner
-        h2.title Используем только элитные сорта газона
-        p Сорта газона премиум класса с многолетним ростом. Подбираем тип газона индивидуально под ваш тип участка
+        +section-header('Используем только элитные сорта газона', 'Сорта газона премиум класса с многолетним ростом. Подбираем тип газона индивидуально под ваш тип участка')
         ul.grades-block__list
           each item, index in topGradeList
+            +grades-card(item, index)
+
+mixin bottom-grades-block
+  section.grades-block.grades-block--bottom
+    .container
+      .grades-block__inner
+        +section-header('Оборудуем ваш участок всем необходимым', 'Оснастим участок необходимым оборудованием под ключ')
+        ul.grades-block__list
+          each item, index in bottomGradeList
             +grades-card(item, index)
 

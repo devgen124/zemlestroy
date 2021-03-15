@@ -1,0 +1,54 @@
+.major-features-card {
+  @include list-item-reset;
+  padding: 30px 85px 30px 30px;
+  width: calc(33.3% - 20px);
+  min-height: 188px;
+  background-color: $color-white;
+  border: 1px solid $color-light-grey;
+  border-radius: 10px;
+
+  @include viewport--md {
+    width: calc(50% - 20px);
+  }
+
+  @include viewport--sm {
+    padding-right: 30px;
+    width: calc(100% - 20px);
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    background-color: $color-light-grey2;
+  }
+
+  &__icon {
+    margin-bottom: 18px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include viewport--sm {
+      margin-right: 20px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-black2;
+    font: 16px/26px $font-family;
+  }
+
+  &--final {
+    background: $color-white url("../img/svg/operator.svg") no-repeat right 0 bottom 0;
+
+    .major-features-card__text {
+      margin-bottom: 17px;
+    }
+
+    @include viewport--sm {
+      display: block;
+      background: $color-light-grey2;
+    }
+  }
+}

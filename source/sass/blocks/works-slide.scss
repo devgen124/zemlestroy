@@ -1,4 +1,5 @@
 .works-slide {
+  min-width: 980px;
   max-width: 980px;
   padding: 32px 30px;
   display: flex;
@@ -7,15 +8,18 @@
   border-radius: 10px;
 
   @include viewport--lg {
+    min-width: calc(100vw - 220px);
     max-width: calc(100vw - 220px);
   }
 
   @include viewport--md {
+    min-width: calc(100vw - 190px);
     max-width: calc(100vw - 190px);
     flex-direction: column;
   }
 
   @include viewport--sm {
+    min-width: calc(100vw - 85px);
     max-width: calc(100vw - 85px);
     padding: 22px 20px;
   }
@@ -80,6 +84,29 @@
 
     li {
       @include arrow-list-item;
+    }
+
+    a {
+      display: block;
+      font: 500 18px/23px $font-family--alt;
+      color: $color-green;
+      transition: opacity $default-transition-settings;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+        width: 11px;
+        height: 7px;
+        background: url("../../img/svg/down.svg") no-repeat center;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 0.8;
+      }
     }
   }
 

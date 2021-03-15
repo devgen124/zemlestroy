@@ -1,0 +1,11 @@
+include ../basic/img
+
+mixin sequence-row(row)
+  .sequence-row(class={'.sequence-row--four': row.length === 4})
+    each item in row
+      .sequence-row__card
+        .sequence-row__img
+          +img('content', item.image.title, 'jpg', item.image.width, item.image.height, item.text)
+        .sequence-row__text
+          =item.text
+

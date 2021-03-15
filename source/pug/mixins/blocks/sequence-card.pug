@@ -1,0 +1,12 @@
+include ../basic/icon
+
+mixin sequence-card(data, mod = null)
+  li.sequence-card(class= mod ? `sequence-card--${mod}` : '')
+    .sequence-card__icon
+      +icon(data.icon.title, data.icon.width, data.icon.height)
+    p= data.title
+
+mixin sequence-card-final
+  li.sequence-card.sequence-card--final
+    p.sequence-card__text Узнайте подробнее об услуге обслуживания
+    +button('Подробнее', '', 'no-icon')

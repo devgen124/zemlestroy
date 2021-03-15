@@ -1,0 +1,8 @@
+include ../basic/img
+
+mixin video(addClass = null)
+  .video(class = addClass ? addClass : null)
+    //- .video__player
+    .video__thumbnail
+      +img('content', 'video-preview', 'png', 360, 230, 'Превью')
+    a.video__play(href="", aria-label="Открыть видео")

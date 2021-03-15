@@ -1,0 +1,86 @@
+.exclusive {
+  &__inner {
+    padding: 81px 46% 110px 48px;
+
+    color: $color-white;
+    background: url("../img/bg/exclusive-bg.jpg") no-repeat 100% 0;
+    border-radius: 10px;
+
+    @include viewport--lg {
+      padding-right: 20vw;
+    }
+
+    @include viewport--sm {
+      padding: 0 0 45px 0;
+      background: none;
+      color: $color-black;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include viewport--sm {
+      display: block;
+      margin-bottom: 19px;
+    }
+  }
+
+  &__content {
+    h2 {
+      margin: 0 0 22px;
+      font: 700 36px/55px $font-family;
+    }
+
+    blockquote {
+      margin: 0;
+
+      p {
+        margin: 0 0 1.5em;
+
+        @include viewport--sm {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    cite {
+      display: block;
+      margin-bottom: 31px;
+      font: italic 16px/26px $font-family;
+
+      @include viewport--sm {
+        margin-top: 20px;
+        margin-bottom: 23px;
+      }
+    }
+  }
+
+  &__link-row {
+    @include viewport--sm {
+      display: flex;
+    }
+  }
+
+  &__contact-btn {
+    display: none;
+
+    @include viewport--sm {
+      margin-left: 20px;
+      width: 57px;
+      height: 57px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: $color-light-grey;
+      transition: background-color $default-transition-settings;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: darken($color-light-grey, 5%);
+      }
+    }
+  }
+}

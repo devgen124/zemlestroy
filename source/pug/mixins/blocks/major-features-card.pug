@@ -1,0 +1,13 @@
+include ../basic/icon
+include button
+
+mixin major-features-card(data)
+  li.major-features-card
+    .major-features-card__icon
+      +icon(data.icon.title, data.icon.width, data.icon.height)
+    p.major-features-card__text!= data.description
+
+mixin major-features-card-final
+  li.major-features-card.major-features-card--final
+    p.major-features-card__text Узнайте подробнее об услуге обслуживания
+    +button('Подробнее', '', 'no-icon')

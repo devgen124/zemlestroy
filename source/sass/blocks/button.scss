@@ -15,17 +15,25 @@
 
   @include outline-reset;
 
+  @include viewport--sm {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
   &--minor {
     @include viewport--sm {
-      padding: 17px;
       width: auto;
       justify-content: center;
-      font-size: 14px;
-      line-height: 17px;
 
       svg {
         display: none;
       }
+    }
+  }
+
+  &--no-icon {
+    svg {
+      display: none;
     }
   }
 
@@ -43,6 +51,7 @@
 
   svg {
     margin-left: 10px;
+    fill: currentColor;
     transition: transform $button-transition-settings;
   }
 
@@ -55,6 +64,37 @@
 
     svg {
       transform: translateX(15px);
+    }
+  }
+
+  &--prev {
+    padding-left: 0;
+    flex-direction: row-reverse;
+    background: transparent;
+    color: $color-green;
+
+    svg {
+      margin-right: 10px;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      svg {
+        transform: translateX(-15px);
+      }
+    }
+  }
+
+  &--prev,
+  &--next {
+    @include viewport--sm {
+      font-size: 14px;
+      line-height: 1;
     }
   }
 }

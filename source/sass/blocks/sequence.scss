@@ -1,4 +1,9 @@
-.major-sequence {
+.sequence {
+  &--top,
+  &--middle {
+    background-color: $color-white;
+  }
+
   &__inner {
     padding-bottom: 100px;
 
@@ -27,6 +32,13 @@
     li {
       margin-right: 20px;
       margin-bottom: 20px;
+    }
+  }
+
+  &--bottom {
+    .sequence__inner {
+      padding-top: 81px;
+      padding-bottom: 110px;
     }
   }
 }

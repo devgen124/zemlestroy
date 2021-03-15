@@ -1,0 +1,17 @@
+include button
+include ../basic/img
+
+mixin questions
+  section.questions
+    .container
+      .questions__inner
+        .questions__content
+          h2.title Возникли вопросы по комплексному оснащению?
+          p.questions__major-text Ответим на любой вопрос
+          p.questions__minor-text Оставьте ваши контакты и мы поможем с выбором
+          +button('Получить предложение')
+        .questions__images
+          - for (let i = 1; i < 5; i++)
+            .questions__images-item
+              +img('content', `quest${i}`, 'jpg', 190, 130, 'Фото')
+

@@ -1,0 +1,10 @@
+.clouds-bg {
+  background-image: url("../../img/bg/clouds-bg.png");
+  background-repeat: no-repeat;
+  background-position: 50% 205px;
+
+  @include viewport--sm {
+    background-image: url("../../img/bg/clouds-mobile-bg.png");
+    background-position: 50% 634px;
+  }
+}

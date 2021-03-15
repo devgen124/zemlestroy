@@ -1,10 +1,29 @@
+include section-header
 include minor-features-card
 
-mixin minor-features
-  section.minor-features
+mixin top-minor-features
+  section.minor-features.minor-features--top
     .container
       .minor-features__inner
-        h2.title Элитный газон лучше обычного рулонного газона
+        +section-header('Элитный газон лучше обычного рулонного газона')
         ul.minor-features__list
-          each item in minorFeaturesList
+          each item in topMinorFeaturesList
             +minor-features-card(item)
+
+mixin middle-minor-features
+  section.minor-features.minor-features--middle
+    .container
+      .minor-features__inner
+        +section-header('Почему такие клиенты обращаются именно к нам', 'Подходим к работе по совести и с душой')
+        ul.minor-features__list
+          each item in middleMinorFeaturesList
+            +minor-features-card(item, narrow = true)
+
+mixin bottom-minor-features
+  section.minor-features.minor-features--bottom
+    .container
+      .minor-features__inner
+        +section-header('Почему такие клиенты обращаются именно к нам', 'Подходим к работе по совести и с душой')
+        ul.minor-features__list
+          each item in middleMinorFeaturesList
+            +minor-features-card(item, narrow = true)

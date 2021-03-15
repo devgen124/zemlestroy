@@ -1,0 +1,11 @@
+include section-header
+include sequence-row
+
+mixin sequence-rows
+  section.sequence-rows
+    .container
+      .sequence-rows__inner
+        +section-header('Как происходит устройство качественного травяного покрытия')
+        .sequence-rows__list
+          each row in sequencesRows
+            +sequence-row(row)

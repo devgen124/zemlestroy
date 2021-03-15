@@ -1,0 +1,34 @@
+mixin major-sequence
+  section.majoe-sequence
+include section-header
+include sequence-card
+
+mixin top-sequence
+  section.sequence.sequence--top
+    .container
+      .sequence__inner
+        +section-header('Ваш газон станет действительно многолетним', 'Как мы достигаем качества роста и прижимаемости газона')
+        ul.sequence__list
+          each item in topSequenceList
+            +sequence-card(item)
+
+mixin middle-sequence
+  section.sequence.sequence--middle
+    .container
+      .sequence__inner
+        +section-header('Вам не придется думать о деталях', 'Организуем весь фронт работ под ключ')
+        ul.sequence__list
+          each item in middleSequenceList
+            +sequence-card(item)
+
+mixin bottom-sequence
+  section.sequence.sequence--bottom
+    .container
+      .sequence__inner
+        +section-header('Как мы работаем')
+        ul.sequence__list
+          each item in bottomSequenceList
+            +sequence-card(item, 'white')
+
+          +sequence-card-final
+

@@ -1,0 +1,25 @@
+.sequence-rows {
+  margin-top: -120px;
+  background: url("../img/bg/sequence-bg.png") no-repeat 50% 0;
+
+  @include viewport--sm {
+    background-image: url("../img/bg/sequence-mobile-bg.png");
+  }
+
+  &__inner {
+    padding-top: 151px;
+    padding-bottom: 140px;
+  }
+
+  &__list {
+    margin-bottom: -20px;
+
+    @include viewport--sm {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: -10px;
+      max-width: 480px;
+    }
+  }
+}
+

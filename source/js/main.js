@@ -6,6 +6,7 @@ import initMobileMenu from './modules/init-mobile-menu';
 import {initAccToggle} from './modules/accordeon';
 import initWorksSlider from './modules/works-slider';
 import initCelebritiesSlider from './modules/celebrities-slider';
+import initgallerySlider from './modules/gallery-slider';
 
 // Utils
 // ---------------------------------
@@ -21,3 +22,4 @@ initMobileMenu();
 initAccToggle();
 initWorksSlider();
 initCelebritiesSlider();
+initgallerySlider();

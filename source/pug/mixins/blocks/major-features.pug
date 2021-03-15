@@ -1,0 +1,12 @@
+include section-header
+include major-features-card
+
+mixin top-major-features
+  section.major-features
+    .container
+      .major-features__inner
+        +section-header('Вам не придется думать о деталях', 'Организуем весь фронт работ под ключ')
+        ul.major-features__list
+          each item in topMajorFeaturesList
+            +major-features-card(item)
+          +major-features-card-final

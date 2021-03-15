@@ -3,10 +3,17 @@ include ../mixins/blocks/promo
 include ../mixins/blocks/grades-block
 include ../mixins/blocks/consult
 include ../mixins/blocks/minor-features
-include ../mixins/blocks/major-sequence
+include ../mixins/blocks/sequence
 include ../mixins/blocks/works
 include ../mixins/blocks/consult-middle
 include ../mixins/blocks/celebrities
+include ../mixins/blocks/survey
+include ../mixins/blocks/gallery
+include ../mixins/blocks/questions
+include ../mixins/blocks/major-features
+include ../mixins/blocks/sequence-rows
+include ../mixins/blocks/video-reviews
+include ../mixins/blocks/exclusive
 
 block data
   include ../data/placeholder
@@ -26,12 +33,29 @@ block main
     +top-grades-block
     +consult
     .bg-mask
-      +minor-features
-      +top-major-sequence
-    +works
+      +top-minor-features
+      +top-sequence
+    +top-works
     .middle-bg
       +consult-middle
       +celebrities
+    .bg-mask.bg-mask--middle
+      +middle-minor-features
+    +middle-sequence
+    +survey
+    +bottom-grades-block
+    +gallery
+    +questions
+    .clouds-bg
+      +top-major-features
+      +bottom-minor-features
+    +sequence-rows
+    +bottom-works
+    +video-reviews
+    .bottom-mask
+      +bottom-sequence
+      +exclusive
+
 
 
 

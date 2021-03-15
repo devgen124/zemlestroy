@@ -1,0 +1,9 @@
+.bottom-mask {
+  background-image: url("../../img/bg/bottom-mask.png");
+  background-repeat: no-repeat;
+  background-position: 0 169px;
+
+  @include viewport--sm {
+    background: $color-white;
+  }
+}

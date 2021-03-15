@@ -7,8 +7,8 @@ mixin works-slide(data)
     .works-slide__left
       +works-gallery(data.gallery)
       .works-slide__video
-        p Смотрите видеоотзыв Михаила
-        .works-slide__video-frame
+        //- p Смотрите видеоотзыв Михаила
+        //- .works-slide__video-frame
 
     .works-slide__right
       h3.title.title--h3
@@ -19,4 +19,4 @@ mixin works-slide(data)
           !=data.content
         .works-slide__price
           =data.price
-        +button('Получить предложение', '', minor = true)
+        +button('Получить предложение', 'works-slide__get-offer', 'minor')

@@ -4,13 +4,19 @@
   background-image: url("../img/bg/bg-mask.png");
   background-repeat: no-repeat;
   background-position: 50% 0;
-  background-size: 1920px auto;
 
   @include viewport--sm {
     margin-top: -83px;
     padding-top: 83px;
     background-image: url("../img/bg/bg-mask-top-mobile.png");
     background-position: 52% 0;
-    background-size: auto;
+  }
+
+  &--middle {
+    background-image: url("../img/bg/bg-mask-middle.png");
+
+    @include viewport--sm {
+      background-image: url("../img/bg/bg-mask-middle-mobile.png");
+    }
   }
 }

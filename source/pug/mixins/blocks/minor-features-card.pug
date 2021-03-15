@@ -1,8 +1,9 @@
 include ../basic/icon
 
-mixin minor-features-card(data)
-  li.minor-features-card
+mixin minor-features-card(data, narrow = false)
+  li.minor-features-card(class={'minor-features-card--narrow': narrow})
     .minor-features-card__icon
       +icon(data.icon.title, data.icon.width, data.icon.height)
-    h3.title.title--h3= data.title
-    p!= data.description
+    if (data.title)
+      h3.title.title--h3= data.title
+    p.minor-features-card__text!= data.description
