@@ -11,6 +11,14 @@
     background-size: auto;
   }
 
+  &--portfolio {
+    background-image: url("../img/bg/bg-consult-portfolio.jpg");
+
+    @include viewport--sm {
+      background-image: url("../img/bg/bg-consult-mobile-portfolio.jpg");
+    }
+  }
+
   &__inner {
     padding: 92px 0 95px;
     position: relative;

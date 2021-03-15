@@ -1,0 +1,13 @@
+include ../basic/img
+
+mixin gallery-minor(gallery, mod)
+  .gallery-minor(class= mod ? `gallery-minor--${mod}` : '')
+    .gallery-minor__main
+      each item in gallery
+        .gallery-minor__main-item
+          +img('content', item.title, 'jpg', gallery.width, gallery.height, item.altText)
+    .gallery-minor__main-nav
+    .gallery-minor__row
+      each item in gallery
+        .gallery-minor__row-item
+          +img('content', item.title, 'jpg', gallery.width, gallery.height, item.altText)

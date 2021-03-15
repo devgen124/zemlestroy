@@ -9,6 +9,7 @@
   &__inner {
     padding-top: 170px;
     padding-bottom: 235px;
+    position: relative;
 
     @include viewport--md {
       padding-bottom: 364px;
@@ -22,9 +23,14 @@
 
   &__major-row {
     position: relative;
+    margin-bottom: 20px;
+
+    @include viewport--sm {
+      margin-bottom: 10px;
+    }
   }
 
-  .owl-nav {
+  &__major-row-nav {
     padding: 0 20px;
     position: absolute;
     left: 0;
@@ -42,8 +48,32 @@
   }
 
   &__minor-row {
-    .owl-item {
+    img {
       border-radius: 10px;
+    }
+
+    .slick-list {
+      margin-right: -20px;
+    }
+
+    .slick-slide {
+      margin-right: 20px;
+
+      &.slick-current {
+        .gallery__minor-row-item {
+          border-color: $color-green;
+        }
+      }
+    }
+
+    @include viewport--sm {
+      .slick-list {
+        margin-right: -10px;
+      }
+
+      .slick-slide {
+        margin-right: 10px;
+      }
     }
   }
 
@@ -53,10 +83,6 @@
     border: 3px solid transparent;
     transition: border-color $default-transition-settings;
     cursor: pointer;
-
-    &.active {
-      border-color: $color-green;
-    }
 
     img {
       width: 100%;

@@ -1,0 +1,42 @@
+extends ../base/layout
+include ../mixins/blocks/promo
+include ../mixins/blocks/grades-block
+include ../mixins/blocks/consult
+include ../mixins/blocks/minor-features
+include ../mixins/blocks/sequence
+include ../mixins/blocks/works
+include ../mixins/blocks/consult-middle
+include ../mixins/blocks/celebrities
+include ../mixins/blocks/survey
+include ../mixins/blocks/gallery
+include ../mixins/blocks/questions
+include ../mixins/blocks/major-features
+include ../mixins/blocks/sequence-rows
+include ../mixins/blocks/video-reviews
+include ../mixins/blocks/exclusive
+include ../mixins/blocks/initial
+include ../mixins/blocks/portfolios
+
+block data
+  include ../data/placeholder
+
+block variables
+  - var title = "Землестрой — Главная"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = 'Портфолио'
+
+block main
+  main
+    +initial-portfolio
+    +portfolios
+    +celebrities
+
+
+
+
+
+

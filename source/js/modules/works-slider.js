@@ -1,97 +1,57 @@
-import 'owl.carousel';
 import {removeAccToggle, initAccToggle} from './accordeon';
 
 export default function initWorksSlider() {
   $(function () {
-    const mainOptions = {
-      loop: true,
-      autoWidth: true,
-      navContainerClass: 'owl-nav owl-main-nav',
-      navClass: [
-        'nav-button nav-button--left',
-        'nav-button nav-button--right'
-      ],
-      navText: [
-        '<svg><use xlink:href="#nav-left"></use></svg>',
-        '<svg><use xlink:href="#nav-right"></use></svg>'
-      ],
-      responsive: {
-        0: {
-          margin: 10,
-          nav: false,
-          dots: false,
-        },
-        768: {
-          margin: 90,
-          center: true,
-          nav: true,
-          dots: true,
-        },
-      },
-    };
+    const prevBtnHTML = '<button class="nav-button nav-button--left"><svg><use xlink:href="#nav-left"></use></svg></button>';
+    const nextBtnHTML = '<button class="nav-button nav-button--right"><svg><use xlink:href="#nav-right"></use></svg></button>';
 
-    const galleryOptions = {
-      loop: true,
-      margin: 10,
-      dots: false,
-      responsive: {
-        0: {
-          items: 1,
-          nav: true,
-          navClass: [
-            'nav-button nav-button--left nav-button--blur',
-            'nav-button nav-button--right nav-button--blur'
-          ],
-          navText: [
-            '<svg><use xlink:href="#nav-left"></use></svg>',
-            '<svg><use xlink:href="#nav-right"></use></svg>'
-          ],
-        },
-        992: {
-          items: 3,
-          nav: false,
-        },
-      },
-    };
+    const $worksSlider = $('.works__container');
 
-    const $mainSlider = $('.works__container');
-    const $gallerySlider = $('.works-gallery__row');
-
-    $mainSlider.owlCarousel(mainOptions);
-
-    $('.works-gallery__row').owlCarousel(galleryOptions);
-
-    $gallerySlider.on('mousedown.owl.core touchstart.owl.core', (e) => {
-      e.stopPropagation();
+    $worksSlider.each(function () {
+      const $nav = $(this).next();
+      $(this).slick({
+        infinite: true,
+        variableWidth: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        centerMode: true,
+        arrows: true,
+        appendArrows: $nav,
+        prevArrow: prevBtnHTML,
+        nextArrow: nextBtnHTML,
+        dots: true,
+        swipe: true,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              arrows: false,
+              dots: false,
+              centerMode: false,
+            },
+          }
+        ],
+      });
     });
 
-    const $navBtns = $('.owl-main-nav').find('.nav-button');
+    $('.gallery-minor')
+        .on('mousedown touchstart', () => {
+          $worksSlider.slick('slickSetOption', 'swipe', false);
+        })
+        .on('mouseup touchend', () => {
+          $worksSlider.slick('slickSetOption', 'swipe', true);
+        });
 
-    const showNav = () => {
-      $navBtns.each((i) => {
-        if ($navBtns.eq(i).hasClass('nav-button--hide')) {
-          $navBtns.eq(i).removeClass('nav-button--hide');
-        }
-      });
-    };
-
-    const hideNav = () => {
-      $navBtns.each((i) => {
-        if (!$navBtns.eq(i).hasClass('nav-button--hide')) {
-          $navBtns.eq(i).addClass('nav-button--hide');
-        }
-      });
-    };
-
-    $mainSlider.on('translate.owl.carousel', hideNav);
-    $mainSlider.on('translated.owl.carousel', showNav);
-    $mainSlider.on('changed.owl.carousel', () => {
-      removeAccToggle();
-      initAccToggle();
-      // const $inactiveItems = $mainSlider.find('.owl-item:not(.active)');
-      // hideAccs($inactiveItems);
-    });
+    $worksSlider
+        .on('beforeChange', function () {
+          $(this).next().find('.nav-button').addClass('nav-button--hide');
+        })
+        .on('afterChange', function () {
+          $(this).next().find('.nav-button').removeClass('nav-button--hide');
+        })
+        .on('init afterChange', function () {
+          removeAccToggle();
+          initAccToggle();
+        });
   });
 }
-
-

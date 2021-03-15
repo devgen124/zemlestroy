@@ -1,5 +1,5 @@
 mixin celebrities-tiles
-  .celebrities-tiles.owl-carousel
+  .celebrities-tiles
     each slide in celebrities
       .celebrities-tiles__slide
         a(href=`#${slide.hash}`, style={'background-image': `url("./img/content/${slide.image.title}.png")`})

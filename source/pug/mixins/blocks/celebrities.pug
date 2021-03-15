@@ -6,7 +6,7 @@ mixin celebrities
     .container
       .celebrities__inner
         h2.visually-hidden Уровень наших клиентов подтверждает наш высокий подход к делу
-        .celebrities__slider.owl-carousel
+        .celebrities__slider
           each slide in celebrities
             +celebrities-slide(slide)
         .celebrities__nav

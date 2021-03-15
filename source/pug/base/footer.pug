@@ -1,9 +1,9 @@
 mixin footer(footerMod)
   -
     const headerLinks = [
-      {href: "#", text: "Главная"},
-      {href: "#", text: "Портфолио"},
-      {href: "#", text: "Видеоотзывы"},
+      {href: "index.html", text: "Главная"},
+      {href: "portfolio.html", text: "Портфолио"},
+      {href: "reviews.html", text: "Видеоотзывы"},
     ]
 
   footer(class= (footerMod) ? "footer footer--" + footerMod : "footer")

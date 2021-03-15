@@ -1,0 +1,17 @@
+include gallery-minor
+include button
+include acc-button
+
+mixin portfolio(data)
+  .portfolio
+    .portfolio__gallery
+      +gallery-minor(data.gallery, 'portfolio')
+
+    .portfolio__main
+      h3.title.title--h3
+        =data.title
+      +acc-button('portfolio__toggle')
+      .portfolio__inner.acc-body
+        .portfolio__content
+          !=data.content
+        +button('Подробнее', 'portfolio__link')

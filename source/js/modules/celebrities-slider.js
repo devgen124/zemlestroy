@@ -1,34 +1,29 @@
-import 'owl.carousel';
-
 export default function initCelebritiesSlider() {
   $(function () {
+    const prevBtnHTML = '<button class="nav-button nav-button--blur nav-button--left"><svg><use xlink:href="#nav-left"></use></svg></button>';
+    const nextBtnHTML = '<button class="nav-button nav-button--blur nav-button--right"><svg><use xlink:href="#nav-right"></use></svg></button>';
+
     const $celebSlider = $('.celebrities__slider');
+    const $nav = $celebSlider.parent().find('.celebrities__nav');
     const celebOptions = {
-      items: 1,
-      loop: true,
+      infinite: true,
       dots: false,
-      mouseDrag: false,
-      nav: true,
-      URLhashListener: true,
-      navContainer: '.celebrities__nav',
-      navClass: [
-        'nav-button nav-button--left nav-button--blur',
-        'nav-button nav-button--right nav-button--blur'
-      ],
-      navText: [
-        '<svg><use xlink:href="#nav-left"></use></svg>',
-        '<svg><use xlink:href="#nav-right"></use></svg>'
-      ],
-      animateOut: 'fadeOut',
-      // smartSpeed: '100',
+      draggable: false,
+      arrows: true,
+      appendArrows: $nav,
+      prevArrow: prevBtnHTML,
+      nextArrow: nextBtnHTML,
+      fade: true,
+      asNavFor: '.celebrities-tiles',
     };
     const $tilesSlider = $('.celebrities-tiles');
     const tilesOptions = {
-      loop: 1,
       dots: false,
-      margin: 20,
+      slidesToShow: 3,
+      asNavFor: '.celebrities__slider',
+      focusOnSelect: true,
     };
-    $celebSlider.owlCarousel(celebOptions);
-    $tilesSlider.owlCarousel(tilesOptions);
+    $celebSlider.slick(celebOptions);
+    $tilesSlider.slick(tilesOptions);
   });
 }

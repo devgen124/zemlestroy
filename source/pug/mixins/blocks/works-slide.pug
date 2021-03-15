@@ -1,22 +1,23 @@
-include works-gallery
+include gallery-minor
 include button
 include acc-button
 
 mixin works-slide(data)
   .works-slide
-    .works-slide__left
-      +works-gallery(data.gallery)
-      .works-slide__video
-        //- p Смотрите видеоотзыв Михаила
-        //- .works-slide__video-frame
+    .works-slide__wrapper
+      .works-slide__left
+        +gallery-minor(data.gallery)
+        .works-slide__video
+          //- p Смотрите видеоотзыв Михаила
+          //- .works-slide__video-frame
 
-    .works-slide__right
-      h3.title.title--h3
-        =data.title
-      +acc-button('works-slide__toggle')
-      .works-slide__inner.acc-body
-        .works-slide__content
-          !=data.content
-        .works-slide__price
-          =data.price
-        +button('Получить предложение', 'works-slide__get-offer', 'minor')
+      .works-slide__right
+        h3.title.title--h3
+          =data.title
+        +acc-button('works-slide__toggle')
+        .works-slide__inner.acc-body
+          .works-slide__content
+            !=data.content
+          .works-slide__price
+            =data.price
+          +button('Получить предложение', 'works-slide__get-offer', 'minor')

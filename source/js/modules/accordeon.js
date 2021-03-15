@@ -1,12 +1,13 @@
 const addClickHandler = (e) => {
   const $btn = $(e.currentTarget);
   $btn.toggleClass('acc-button--close');
-  const $block = $btn.next();
+  const $block = $btn.parent().find('.acc-body');
   $block.slideToggle();
 };
 
 export const initAccToggle = () => {
   const $accButtons = $('.acc-button');
+
   $accButtons.each((i) => {
     const $btn = $accButtons.eq(i);
     $btn.on('click', addClickHandler);

@@ -8,10 +8,11 @@ mixin gallery
     .container
       .gallery__inner
         +section-header('Что вы получите в результате', 'Посмотрите примеры наших работ')
-        .gallery__major-row.owl-carousel
+        .gallery__major-row
           each item in numberRow
             +img('content', 'gallery', 'jpg', 1120, 522, 'Фото в галерее')
-        .gallery__minor-row.owl-carousel
+        .gallery__major-row-nav
+        .gallery__minor-row
           each item, index in numberRow
             .gallery__minor-row-item
               +img('content', 'gallery', 'jpg', 1120, 522, 'Фото в галерее')

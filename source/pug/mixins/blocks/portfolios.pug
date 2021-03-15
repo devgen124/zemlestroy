@@ -1,0 +1,9 @@
+include portfolio
+
+mixin portfolios
+  section.portfolios
+    .container
+      .portfolios__inner
+        .portfolios__list.owl-carousel
+          each item in topWorksList
+            +portfolio(item)

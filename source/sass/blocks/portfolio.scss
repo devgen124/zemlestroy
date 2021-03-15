@@ -1,50 +1,19 @@
-.works-slide {
-  &__wrapper {
-    min-width: 980px;
-    max-width: 980px;
-    padding: 32px 30px;
-    display: flex;
-    background-color: $color-white;
-    border: 1px solid $color-light-grey;
-    border-radius: 10px;
+.portfolio {
+  margin: 0 20px 20px 0;
+  padding: 40px 31px;
+  width: calc(50% - 20px);
+  background-color: $color-white;
+  border: 1px solid $color-light-grey;
 
-    @include viewport--lg {
-      min-width: calc(100vw - 220px);
-      max-width: calc(100vw - 220px);
-    }
-
-    @include viewport--md {
-      min-width: calc(100vw - 190px);
-      max-width: calc(100vw - 190px);
-      flex-direction: column;
-    }
-
-    @include viewport--sm {
-      min-width: calc(100vw - 85px);
-      max-width: calc(100vw - 85px);
-      padding: 22px 20px;
-    }
+  @include viewport--md {
+    min-width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
   }
 
-  &__left {
-    flex: 0 0 336px;
-    max-width: 336px;
-
-    @include viewport--md {
-      margin-bottom: -10px;
-      flex: 0 0 auto;
-      max-width: none;
-      display: flex;
-    }
-  }
-
-  &__right {
-    padding-left: 30px;
-
-    @include viewport--md {
-      padding-left: 0;
-      position: relative;
-    }
+  @include viewport--sm {
+    min-width: calc(100vw - 85px);
+    max-width: calc(100vw - 85px);
+    padding: 22px 20px;
   }
 
   h3 {
@@ -55,6 +24,10 @@
       margin-bottom: 0;
       padding-right: 75px;
     }
+  }
+
+  &__main {
+    position: relative;
   }
 
   &__inner {

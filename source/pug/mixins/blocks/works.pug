@@ -7,16 +7,19 @@ mixin top-works
     .container
       .works__inner
         +section-header('Как может выглядеть ваш участок')
-        .works__container.owl-carousel
+        .works__container
           each item in topWorksList
             +works-slide(item)
+        .works__nav
 
 mixin bottom-works
   section.works.works--bottom
     .container
       .works__inner
         +section-header('Наши успешные проекты')
-        .works__container.owl-carousel
+        .works__container
           each item in bottomWorksList
             +works-slide(item)
+        .works__nav
         +button('Все проекты', 'works__link')
+
