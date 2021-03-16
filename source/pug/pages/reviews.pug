@@ -8,6 +8,7 @@ include ../mixins/blocks/video-reviews
 include ../mixins/blocks/exclusive
 include ../mixins/blocks/initial
 include ../mixins/blocks/portfolios
+include ../mixins/blocks/major-video-reviews
 
 block data
   include ../data/placeholder
@@ -19,17 +20,16 @@ block variables
   - var headerMod = ""
   - var hasFooter = true
   - var footerMod = ""
-  - var currentPage = 'Портфолио'
+  - var currentPage = 'Видеоотзывы'
 
 block main
   main
-    +initial-portfolio
-    +portfolios
-    +celebrities
+    +initial-reviews
+    +major-video-reviews
     +consult-portfolio
     .bg-mask.bg-mask--portfolio
       +middle-minor-features(true)
-    +video-reviews-portfolio
+    +portfolios
     .bottom-mask
       +bottom-sequence
       +exclusive

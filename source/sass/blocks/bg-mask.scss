@@ -19,4 +19,14 @@
       background-image: url("../img/bg/bg-mask-middle-mobile.png");
     }
   }
+
+  &--portfolio {
+    position: relative;
+    background-image: url("../img/bg/bg-mask-portfolio.png");
+
+    @include viewport--sm {
+      margin-top: -53px;
+      background-image: url("../img/bg/bg-mask-portfolio-mobile.png");
+    }
+  }
 }

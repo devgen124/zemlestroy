@@ -1,5 +1,6 @@
 include section-header
 include minor-features-card
+include button
 
 mixin top-minor-features
   section.minor-features.minor-features--top
@@ -10,7 +11,7 @@ mixin top-minor-features
           each item in topMinorFeaturesList
             +minor-features-card(item)
 
-mixin middle-minor-features
+mixin middle-minor-features(btn = false)
   section.minor-features.minor-features--middle
     .container
       .minor-features__inner
@@ -18,6 +19,8 @@ mixin middle-minor-features
         ul.minor-features__list
           each item in middleMinorFeaturesList
             +minor-features-card(item, narrow = true)
+        if (btn)
+          +button('Узнайте как мы работаем', 'minor-features__btn')
 
 mixin bottom-minor-features
   section.minor-features.minor-features--bottom

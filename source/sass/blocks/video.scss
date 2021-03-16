@@ -1,6 +1,7 @@
 .video {
   width: 360px;
-  height: 230px;
+  // height: 230px;
+  padding-top: percentage(230px/360px);
   position: relative;
   border-radius: 10px;
 
@@ -9,7 +10,15 @@
     height: 160px;
   }
 
+  &--fullwidth {
+    width: auto;
+  }
+
   &__thumbnail {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(black, 0.8);
@@ -26,6 +35,7 @@
 
   &__play {
     position: absolute;
+    z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

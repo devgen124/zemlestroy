@@ -1,0 +1,18 @@
+include ../../base/modal
+include ../blocks/button
+
+mixin modal-form
+  +modal('form')
+    .modal-form
+      .modal-form__header
+        h2 Узнайте подробнее
+        p.modal-form__major-text Оставьте заявку
+        p.modal-form__minor-text – наш менеджер свяжется с Вами в ближайшее время
+
+      form.modal-form__form
+        label
+          input(type="text" placeholder="Введите Ваше имя")
+        label
+          input(type="tel" placeholder="Введите Ваш телефон")
+
+        +submit-button('Оставить заявку', 'modal-form__submit')

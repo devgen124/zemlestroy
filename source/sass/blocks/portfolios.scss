@@ -1,8 +1,26 @@
 .portfolios {
+  margin-bottom: 100px;
+
+  @include viewport--sm {
+    margin-bottom: 50px;
+  }
 
   &__list {
     margin: 0 -20px -20px 0;
     display: flex;
     flex-wrap: wrap;
+
+    @include viewport--sm {
+      margin: 0;
+      display: block;
+
+      > .slick-list {
+        margin-right: -10px;
+
+        > .slick-track > .slick-slide {
+          margin-right: 10px;
+        }
+      }
+    }
   }
 }

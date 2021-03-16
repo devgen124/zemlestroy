@@ -12,10 +12,29 @@
   }
 
   &--portfolio {
+    margin-top: 150px;
     background-image: url("../img/bg/bg-consult-portfolio.jpg");
 
     @include viewport--sm {
-      background-image: url("../img/bg/bg-consult-mobile-portfolio.jpg");
+      background: $color-white;
+      color: $color-black;
+
+      .consult__inner {
+        padding-bottom: 50px;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include viewport--sm {
+      margin-bottom: 20px;
+      display: block;
+
+      img {
+        border-radius: 10px;
+      }
     }
   }
 

@@ -4,6 +4,7 @@
   width: calc(50% - 20px);
   background-color: $color-white;
   border: 1px solid $color-light-grey;
+  border-radius: 10px;
 
   @include viewport--md {
     min-width: calc(100% - 20px);
@@ -11,6 +12,7 @@
   }
 
   @include viewport--sm {
+    margin: 0;
     min-width: calc(100vw - 85px);
     max-width: calc(100vw - 85px);
     padding: 22px 20px;

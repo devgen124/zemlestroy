@@ -1,7 +1,15 @@
 include ../basic/icon
 
-mixin button(text, addClass = null, mod = null)
-  a(href='#' class= [addClass ? addClass : '', 'button', mod ? `button--${mod}` : ''])
+mixin button(text, addClass = null, mod = null, href="#")
+  a(href=href class= [addClass ? addClass : '', 'button', mod ? `button--${mod}` : ''])
+    =text
+    if (mod != 'prev')
+      +icon('arrow-left', 14, 15)
+    else
+      +icon('arrow-right', 14, 15)
+
+mixin submit-button(text, addClass = null, mod = null)
+  button(type="submit" class= [addClass ? addClass : '', 'button', mod ? `button--${mod}` : ''])
     =text
     if (mod != 'prev')
       +icon('arrow-left', 14, 15)

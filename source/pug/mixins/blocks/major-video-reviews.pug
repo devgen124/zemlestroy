@@ -1,0 +1,18 @@
+include video
+
+mixin major-video-reviews
+  section.major-video-reviews
+    .container
+      .major-video-reviews__inner
+        +section-header('Видеоотзывы наших клиентов')
+        .major-video-reviews__list-wrapper
+          .major-video-reviews__list
+            each item in videoReviews
+              .major-video-reviews__item
+                +video('video--fullwidth')
+                h3.major-video-reviews__name= item.name
+                p.major-video-reviews__location= item.location
+                p.major-video-reviews__text!= item.text
+                .major-video-reviews__content!= item.content
+
+

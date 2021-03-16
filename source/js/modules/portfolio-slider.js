@@ -1,62 +1,37 @@
-// import {removeAccToggle, initAccToggle} from './accordeon';
+import {removeAccToggle, initAccToggle} from './accordeon';
 
-// export default function initPortfolioSlider() {
-//   $(function () {
-//     const mainOptions = {
+export default function initPortfolioSlider() {
+  $(function () {
+    const mainOptions = {
+      mobileFirst: true,
+      arrows: false,
+      dots: false,
+      variableWidth: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: 'unslick',
+        }
+      ],
+    };
 
-//       responsive: {
-//         0: {
-//           margin: 10,
-//           nav: false,
-//           dots: false,
-//           autoWidth: true,
-//         },
-//         768: {
-//           mouseDrag: false,
-//         },
-//       },
-//     };
+    const $portfoliosList = $('.portfolios__list');
 
-//     // const galleryOptions = {
-//     //   loop: true,
-//     //   margin: 10,
-//     //   dots: false,
-//     //   responsive: {
-//     //     0: {
-//     //       items: 1,
-//     //       nav: true,
-//     //       navClass: [
-//     //         'nav-button nav-button--left nav-button--blur',
-//     //         'nav-button nav-button--right nav-button--blur'
-//     //       ],
-//     //       navText: [
-//     //         '<svg><use xlink:href="#nav-left"></use></svg>',
-//     //         '<svg><use xlink:href="#nav-right"></use></svg>'
-//     //       ],
-//     //     },
-//     //     992: {
-//     //       items: 3,
-//     //       nav: false,
-//     //     },
-//     //   },
-//     // };
+    $portfoliosList.slick(mainOptions);
 
-//     function postsCarousel() {
-//       const checkWidth = $(window).width();
-//       const $portfolioSlider = $('.portfolios__list');
-//       if (checkWidth > 767) {
-//         if (typeof $portfolioSlider.data('owl.carousel') !== 'undefined') {
-//           $portfolioSlider.data('owl.carousel').destroy();
-//         }
-//         $portfolioSlider.removeClass('owl-carousel');
-//       } else if (checkWidth < 768) {
-//         $portfolioSlider.addClass('owl-carousel');
-//         $portfolioSlider.owlCarousel(mainOptions);
-//       }
-//     }
+    $('.gallery-minor')
+        .on('mousedown touchstart', () => {
+          $portfoliosList.slick('slickSetOption', 'swipe', false);
+        })
+        .on('mouseup touchend', () => {
+          $portfoliosList.slick('slickSetOption', 'swipe', true);
+        });
 
-//     postsCarousel();
-//     // $(window).on('resize', postsCarousel);
-//   });
+    $portfoliosList
+        .on('init afterChange', function () {
+          removeAccToggle();
+          initAccToggle();
+        });
+  });
 
-// }
+}

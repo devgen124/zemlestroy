@@ -19,4 +19,21 @@ mixin video-reviews
 
         +button('Все видеоотзывы', 'video-reviews__link')
 
+mixin video-reviews-portfolio
+  section.video-reviews.video-reviews--portfolio
+    .container
+      .video-reviews__inner
+        +section-header('Видеоотзывы наших клиентов')
+        .video-reviews__list-wrapper
+          .video-reviews__list
+            each item in videoReviews
+              .video-reviews__item
+                +video('video-reviews__video')
+                h3.video-reviews__name= item.name
+                p.video-reviews__location= item.location
+                p.video-reviews__text!= item.text
+                .video-reviews__content!= item.content
+
+        +button('Все видеоотзывы', 'video-reviews__link')
+
 

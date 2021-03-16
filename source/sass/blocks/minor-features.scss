@@ -16,4 +16,12 @@
       margin-bottom: 40px;
     }
   }
+
+  &__btn {
+    margin: 40px auto;
+
+    @include viewport--sm {
+      display: none;
+    }
+  }
 }
